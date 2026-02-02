@@ -65,6 +65,26 @@ header a:hover{
   cursor: url('images/main_curseur-removebg.png') 0 0, auto;
 }
 
+.menu-categories{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: nowrap;
+  text-align: center;
+}
+
+.menu-categories a{
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .menu-categories {
+    overflow-x: auto;        /* permet de scroller horizontalement si besoin */
+    padding: 0 10px;
+  }
+}
+
 .cta {
   background-color: #d8433e;
   color: white;
