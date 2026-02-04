@@ -38,6 +38,20 @@ body {
   overflow-x: hidden;
 }
 
+.rangee_photos > div {
+  display: flex;
+  flex-wrap: wrap; /* permet aux images de passer à la ligne si nécessaire */
+  gap: 12px; /* espace entre les images */
+  justify-content: center; /* centre les images */
+}
+
+.rangee_photos img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  flex: 0 0 auto; /* empêche les images de s'étirer */
+}
+
 .page_accueil{
   background-color: #fdfbba;
   background-size: 34px 34px;
@@ -271,6 +285,10 @@ main section {
   justify-content: center;
 }
 
+.carre-contenu > img {
+  border-radius: 20px; /* coins arrondis */
+}
+
 .page-about .carre-contenu p {
   margin-bottom: 50px;
 }
@@ -291,17 +309,6 @@ body > section {
 }
 
 
-body > main {
-  background: #fbf99d;
-  padding-top: 20px;
-
-  /* Full-bleed: étend le fond jusqu'aux bords du viewport */
-  box-shadow: 0 0 0 100vmax #fbf99d;
-  clip-path: inset(0 -100vmax); /* empêche le scroll horizontal */
-}
-
-
-
 /* =========================
    RESPONSIVE
 ========================= */
@@ -318,7 +325,6 @@ body > main {
     height: 40px;
     width: auto;
     max-width: none;
-    flex-basis: 100%;
   }
 
   header nav > a > img {
@@ -328,14 +334,13 @@ body > main {
   }
 
   header nav > a {
-    flex-basis: 100%; /* force le lien du logo à prendre toute la largeur */
     display: block; /* important pour que flex-basis fonctionne */
   }
 
   /* Réduit la taille des boutons de menu */
   header nav .menu-categories {
     display: flex;
-    gap: 20px;
+    gap: 12px; /* augmenté de 8px à 12px */
     align-items: center;
     flex-wrap: wrap;
     width: 100%; /* permet aux boutons de passer à la ligne */
@@ -394,7 +399,18 @@ body > main {
   .page-about main{
     height:100%;
   }
+}
+
+/* Media query spécifique pour mobile - logo prend toute la largeur */
+@media (max-width: 768px) {
+  header nav > img {
+    flex-basis: 100%;
   }
+
+  header nav > a {
+    flex-basis: 100%;
+  }
+}
 
 @media (max-width: 375px) {
   header nav {
@@ -410,6 +426,7 @@ body > main {
     height: 25px; /* boutons encore plus petits */
   }
 }
+
 
 
 /*
