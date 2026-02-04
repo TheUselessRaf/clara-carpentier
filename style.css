@@ -3,6 +3,8 @@
 ========================= */
 *, *::before, *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html, body {
@@ -10,7 +12,7 @@ html, body {
   padding: 0;
 }
 
-html { height: 100ù; }
+html { height: 100%; }
 
 body {
   font-family: 'Manrope', sans-serif;
@@ -33,6 +35,7 @@ body {
   min-height: 100svh;      /* stable sur mobile */
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 .page_accueil{
@@ -56,7 +59,6 @@ footer {
   display: flex;
   align-items: center;
   width: 100%;
-  align-self: stretch;
   margin-top: auto;
   padding: 20px 50px;
   justify-content: space-between;
@@ -68,7 +70,18 @@ footer > div {
   display: flex;
   align-items: center;
   gap: 25px;
-  justify-content: flex-end;        /* espace entre les icônes */
+  justify-content: flex-end;      /* espace entre les icônes */
+}
+
+/*Taille des icônes réseaux sociaux - DESKTOP */
+footer > div img {
+  width: 45px;
+  height: auto;
+}
+
+/* Retire les marges inutiles sur les liens */
+footer > div a.lien-icone {
+  margin-left: 0;
 }
 
 /* Liens */
@@ -97,11 +110,21 @@ header {
 
 header nav {
   width: 100%;
-  padding: 20px 50px; /* desktop */
+  padding: 20px 15px; /* desktop */
   display: flex;
   align-items: center;
   justify-content: flex-start; /* IMPORTANT: pas space-between */
   gap: 20px;
+}
+
+header nav > img {
+  max-width: 550px; /* réduit de 550px à 350px */
+  height: auto;
+}
+
+header nav > a {
+  max-width: 350px; /* réduit de 550px à 350px */
+  height: auto;
 }
 
 /* menu */
@@ -118,7 +141,10 @@ header nav {
   white-space: nowrap;
 }
 
-.lien-icone { margin-left: 30px; }
+header nav .menu-categories img {
+  max-width: 200px; /* réduit de 350px à 200px pour que tout rentre */
+  height: auto;
+}
 
 /* =========================
    TITRES / TEXTES
@@ -129,7 +155,7 @@ h1 {
   color: #d8433e;
   font-family: 'Karla', sans-serif;
   padding-top: 50px;
-  padding-left: 80px;
+  padding-left: 50px;
 }
 
 h2 {
@@ -167,7 +193,9 @@ em {
 
 /* Galerie accueil */
 .accueil-photos {
-  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .accueil-photos h2 {
@@ -175,6 +203,9 @@ em {
   text-align: center;
   margin-bottom: 50px;
   font-size: 2em;
+  width: 100%;
+  padding-left: 0;
+  font-weight: bold;
 }
 
 /* wrapper direct des vignettes */
@@ -240,11 +271,14 @@ main section {
   justify-content: center;
 }
 
+.page-about .carre-contenu p {
+  margin-bottom: 50px;
+}
 
 .page-about .mail-contact {
   margin-top: auto; /* pousse ce bloc vers le bas */
   text-align: center;
-  margin-bottom: 500px;
+  margin-bottom: 50px;
 }
 
 .page-about .mail-contact a { display: inline-block; }
@@ -267,49 +301,70 @@ body > main {
 }
 
 
-/* Footer: logo à gauche, icônes à droite (mobile + desktop) */
-body > footer {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-}
-
-body > footer > div {
-  margin-left: auto !important;
-  display: flex !important;
-  align-items: center;
-  justify-content: flex-end !important;
-  gap: 22px;
-  flex-wrap: nowrap;
-}
-
-/* évite que tes .lien-icone (margin-left:30px) ruine l'espacement */
-body > footer > div > a.lien-icone {
-  margin-left: 0 !important;
-}
-
-footer > div { gap: 18px; }
-footer > div .lien-icone { margin-left: 0 !important; }
-
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100svh;
-}
-
 
 /* =========================
    RESPONSIVE
 ========================= */
-@media (max-width: 768px) {
+
+@media (max-width: 1024px) {
   header nav {
-    padding: 12px 16px;
+    padding: 12px 8px;
+    gap: 6px; /* réduit l'espace entre les éléments */
+    flex-wrap: wrap; /* permet au contenu de passer à la ligne */
+  }
+
+  /* Réduit la taille du logo */
+  header nav > img {
+    height: 40px;
+    width: auto;
+    max-width: none;
+    flex-basis: 100%;
+  }
+
+  header nav > a > img {
+    height: 40px;
+    width: auto;
+    max-width: none;
+  }
+
+  header nav > a {
+    flex-basis: 100%; /* force le lien du logo à prendre toute la largeur */
+    display: block; /* important pour que flex-basis fonctionne */
+  }
+
+  /* Réduit la taille des boutons de menu */
+  header nav .menu-categories {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%; /* permet aux boutons de passer à la ligne */
+    margin-left: 0; /* annule le margin-left: auto du desktop */
+    justify-content: center; /* centre les boutons sur mobile */
+  }
+
+  header nav .menu-categories img {
+    height: 30px; /* hauteur FIXE pour tous les boutons */
+    width: auto; /* largeur s'adapte automatiquement */
+    max-width: none; /* enlève la limite de largeur */
   }
 
   footer {
-    padding: 12px 16px;
+    padding: 12px 8px;
+  }
+
+  footer > div {
+    gap: 12px; /* réduit l'espace entre les icônes de 25px à 12px */
+  }
+
+  footer > img {
+    display: none;
+  }
+  
+  /* Taille mobile pour les icônes réseaux */
+  footer > div img {
+    width: 35px; /* taille adaptée sur mobile */
+    height: auto;
   }
 
   /* menu scroll horizontal sur mobile si trop long */
@@ -329,10 +384,10 @@ body {
     padding: 24px 16px;
   }
 
-  footer > div { gap: 18px; margin-left: auto;}
+  footer > div { gap: 2px; margin-left: auto;}
 
   footer img {
-    max-width: 55%;
+    max-width: 60%;
     height: auto;
   } 
 
@@ -341,8 +396,23 @@ body {
   }
   }
 
+@media (max-width: 375px) {
+  header nav {
+    padding: 8px 6px;
+    gap: 6px;
+  }
+
+  header nav > img {
+    height: 35px; /* logo encore plus petit */
+  }
+
+  header nav .menu-categories img {
+    height: 25px; /* boutons encore plus petits */
+  }
+}
 
 
+/*
 main { outline: 3px solid blue; }
 footer { outline: 3px solid red; }
 header { outline: 3px solid red; }
