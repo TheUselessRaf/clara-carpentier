@@ -148,8 +148,8 @@ header nav > img {
   border-bottom: 50px;
 }
 
-header nav > a {
-  max-width: 400px; /* réduit de 550px à 350px */
+header nav > a > img{
+  max-width: 500px; /* réduit de 550px à 350px */
   height: auto;
 }
 
