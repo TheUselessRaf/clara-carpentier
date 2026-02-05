@@ -25,8 +25,8 @@ body {
     0deg,
     #f1c84e,
     #f1c84e 1.7px,
-    #fdfbba 1.7px,
-    #fdfbba
+    #fffdc4 1.7px,
+    #fffdc4
   );
 
   cursor: url('images/main_curseur-removebg.png') 0 0, auto;
@@ -59,8 +59,8 @@ body {
     0deg,
     #f1c84e,
     #f1c84e 1.7px,
-    #fdfbba 1.7px,
-    #fdfbba
+    #fffdc4 1.7px,
+    #fffdc4
   );
 }
 
@@ -329,7 +329,7 @@ body > section {
 @media (max-width: 1024px) {
   header nav {
     padding: 12px 8px;
-    gap: 16px; /* réduit l'espace entre les éléments */
+    gap: 25px; /* réduit l'espace entre les éléments */
     flex-wrap: wrap; /* permet au contenu de passer à la ligne */
   }
 
@@ -438,6 +438,12 @@ body > section {
 
   header nav > a {
     flex-basis: 100%;
+    display: flex; /* active flexbox pour centrer l'image */
+    justify-content: center; /* centre l'image horizontalement */
+  }
+
+  header nav > a > img {
+    max-width: 100%; /* empêche l'image de dépasser */
   }
 }
 
