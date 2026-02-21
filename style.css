@@ -355,52 +355,7 @@ body > section {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.projet-card1 {
-    background: white;
-    border: 3px solid #d8433e;
-    border-radius: 240px 20px 210px 25px/18px 235px 22px 248px;
-    /* Cette bordure arrondie irrégulière imite un trait tremblé */
-    padding: 20px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.projet-card2 {
-    background: white;
-    border: 3px solid #d8433e;
-    border-radius: 245px 28px 215px 12px/14px 240px 25px 250px;
-    /* Cette bordure arrondie irrégulière imite un trait tremblé */
-    padding: 20px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.projet-card3 {
-    background: white;
-    border: 3px solid #d8433e;
-    border-radius: 268px 12px 232px 18px/20px 218px 16px 262px;
-    /* Cette bordure arrondie irrégulière imite un trait tremblé */
-    padding: 20px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
 .projet-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
-}
-
-.projet-card1:hover {
-    transform: translateY(-5px);
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
-}
-
-.projet-card2:hover {
-    transform: translateY(-5px);
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
-}
-
-.projet-card3:hover {
     transform: translateY(-5px);
     box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
 }
