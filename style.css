@@ -17,9 +17,7 @@ html { height: 100%; }
 body {
   font-family: 'Manrope', sans-serif;
   font-size: 1em;
-
-  /* fond papier ligné */
-  background-color: #fdfbba;
+  background-color: #d4dfff;
   background-size: 34px 34px;
   cursor: url('images/main_curseur-removebg.png') 0 0, auto;
 
@@ -45,7 +43,7 @@ body {
 }
 
 .page_accueil{
-  background-color: #fdfbba;
+  background-color: #d4dfff;
   background-size: 34px 34px;
 }
 
@@ -58,6 +56,7 @@ footer {
   display: flex;
   align-items: center;
   width: 100%;
+  background-color: #d4dfff;
   margin-top: auto;
   padding: 20px 50px;
   justify-content: space-between;
@@ -119,7 +118,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000; /* garde le header au-dessus du contenu */
-  background-color: #fdfbba;
+  background-color: #d4dfff;
 }
 
 header nav {
@@ -200,11 +199,17 @@ em {
   width: 100%;
   margin-top: 24px;
 }
+
 .accueil-introduction img {
   display: block;
   margin: 0 auto;          /* centre le portrait */
   max-width: 100%;
   height: auto;
+}
+
+.titre-centre {
+    text-align: center;
+    padding-left: 0 !important;
 }
 
 /* Galerie accueil */
@@ -350,10 +355,56 @@ body > section {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.projet-card1 {
+    background: white;
+    border: 3px solid #d8433e;
+    border-radius: 240px 20px 210px 25px/18px 235px 22px 248px;
+    /* Cette bordure arrondie irrégulière imite un trait tremblé */
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projet-card2 {
+    background: white;
+    border: 3px solid #d8433e;
+    border-radius: 245px 28px 215px 12px/14px 240px 25px 250px;
+    /* Cette bordure arrondie irrégulière imite un trait tremblé */
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projet-card3 {
+    background: white;
+    border: 3px solid #d8433e;
+    border-radius: 268px 12px 232px 18px/20px 218px 16px 262px;
+    /* Cette bordure arrondie irrégulière imite un trait tremblé */
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 .projet-card:hover {
     transform: translateY(-5px);
     box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
 }
+
+.projet-card1:hover {
+    transform: translateY(-5px);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+}
+
+.projet-card2:hover {
+    transform: translateY(-5px);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+}
+
+.projet-card3:hover {
+    transform: translateY(-5px);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+}
+
 
 .projet-card img {
     width: 100%;
