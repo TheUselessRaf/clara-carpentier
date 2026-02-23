@@ -317,11 +317,12 @@ body > section {
 
 .cv {
     padding: 1rem 4rem 4rem;
-    max-width: 1000px;
+    max-width: 700px;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .cv img {
@@ -333,6 +334,15 @@ body > section {
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
     /* Cette bordure arrondie irrégulière imite un trait tremblé */
   }
+
+.cv-clickable {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.cv-clickable:hover {
+    transform: scale(1.02);
+}
 
 /* Grille de projets */
 .projets-grid {
@@ -353,6 +363,8 @@ body > section {
     padding: 20px;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 400px; /* Limite la largeur */
+    margin: 0 auto; /* Centre la carte si elle est plus petite que la grille */
 }
 
 .projet-card:hover {
@@ -454,20 +466,20 @@ body:has(.lightbox.active) header {
 
 @media (max-width: 1024px) {
   header nav {
-    padding: 12px 8px;
+    padding: 8px 8px;
     gap: 25px; /* réduit l'espace entre les éléments */
     flex-wrap: wrap; /* permet au contenu de passer à la ligne */
   }
 
   /* Réduit la taille du logo */
   header nav > img {
-    height: 40px;
+    height: 35px;
     width: auto;
     max-width: none;
   }
 
   header nav > a > img {
-    height: 40px;
+    height: 35px;
     width: auto;
     max-width: none;
   }
@@ -479,7 +491,7 @@ body:has(.lightbox.active) header {
   /* Réduit la taille des boutons de menu */
   header nav .menu-categories {
     display: flex;
-    gap: px; /* augmenté de 8px à 12px */
+    gap: 20px; /* augmenté de 8px à 12px */
     align-items: center;
     flex-wrap: wrap;
     width: 100%; /* permet aux boutons de passer à la ligne */
@@ -488,7 +500,7 @@ body:has(.lightbox.active) header {
   }
 
   header nav .menu-categories img {
-    height: 30px; /* hauteur FIXE pour tous les boutons */
+    height: 25px; /* hauteur FIXE pour tous les boutons */
     width: auto; /* largeur s'adapte automatiquement */
     max-width: none; /* enlève la limite de largeur */
   }
